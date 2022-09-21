@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+    <header id="showcase" class="grid">
+
+    </header>
+    <main id="main" class="container">
+        <div class="row">
+            <div id="form" style="float: left; padding: 5em;"></div>
+            <div id="cameraStream" style="float: left; padding: 5em;"></div>
+        </div>
+    </main>
+    
+
+    <script type="text/babel">
+      class Form extends React.Component {
+        render() {
+            return (
+                    <div class="col-lg-4  offset-lg-2">
+                        <h3 class="mt-5">Add visitor</h3>
+                        <form>
+                            <label>
+                                Visitor's Name:&nbsp;
+                                <input type="text" name="name" />
+                            </label> <br /><br />
+                            <label>
+                                Vistor's type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="id" />
+                            </label> <br /><br />
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                )
+        }
+      }
+      ReactDOM.render(<Form />, document.getElementById('form'))
+
+      class CameraStream extends React.Component {
+        render() {
+          return (
+                    <div class="col-lg-8  offset-lg-2">
+                        <h3 class="mt-5">Live Streaming</h3>
+                        <img src="{{ url_for('video_feed') }}" width="100%" />
+                    </div>
+                )
+        }
+      }
+      ReactDOM.render(<CameraStream />, document.getElementById('cameraStream'))
+
+
+    </script>
+  </body>
+</html>
