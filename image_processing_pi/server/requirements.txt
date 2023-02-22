@@ -1,0 +1,9 @@
+opencv-contrib-python
+cmake
+dlib
+face_recognition
+pickle-mixin
+imutils
+numpy
+flask
+flask-cors
