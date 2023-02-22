@@ -1,9 +1,0 @@
-mkvirtualenv image_processing -p python3
-pip install opencv-contrib-python
-pip install dlib
-pip install face_recognition
-pip install pickle-mixin
-pip install imutils
-pip install numpy
-pip install flask
-pip install -U flask-cors
